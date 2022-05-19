@@ -1,0 +1,15 @@
+.title{
+    padding: 10px;
+  }
+  
+  .imagePD{
+    width: 30%;
+    height: 30%;
+    padding: auto;
+    display: inline-block;
+  }
+  
+  .ProductDetail{
+    font-size: 220%;
+    display: inline-block;
+  }

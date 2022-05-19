@@ -5,9 +5,11 @@
     <div class="productList">
         <div class="productComponent" *ngFor="let product of products">
             <div class="container">
+                <a [title]="product.name + 'details'" [routerLink]="['/product', product.id]">
                 <div class="images">
                     <img src={{product.image}}>
                 </div>
+                </a>
                 <div class="product">
                     <p>SMARTPHONE</p>
                     <h1>{{product.name}}</h1>
