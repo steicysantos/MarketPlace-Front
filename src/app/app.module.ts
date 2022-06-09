@@ -9,8 +9,7 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { AddressRegisterComponent } from './address-register/address-register.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
-import { LoginClientComponent } from './login-client/login-client.component';
-import { LoginOwnerComponent } from './login-owner/login-owner.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +19,7 @@ import { LoginOwnerComponent } from './login-owner/login-owner.component';
     ProductDetailComponent,
     AddressRegisterComponent,
     ClientRegisterComponent,
-    LoginClientComponent,
-    LoginOwnerComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -31,8 +29,7 @@ import { LoginOwnerComponent } from './login-owner/login-owner.component';
       {path:'product/:productID',component:ProductDetailComponent},
       {path: 'address-register', component: AddressRegisterComponent},
       {path: 'client-register', component: ClientRegisterComponent},
-      {path: 'client/login', component: LoginClientComponent},
-      {path: 'owner/login', component: LoginOwnerComponent}
+      {path: 'login', component: LoginComponent}
     ])
   ],
   providers: [],

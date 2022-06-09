@@ -1,31 +1,31 @@
-<app-top-bar [titulo]="titlePage"></app-top-bar>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
-<div class="register-box">
-    <h1>Mudança de endereço</h1>
-    <br><br>
-   <form>
-       <div>
-           <input type="text" id="street" placeholder="Street" />
-       </div>
-
-       <div>
-            <input type="text" id="postal_code" placeholder="Postal Code" />
+<body>
+    <div class="container-address">
+      <div class="title">Register Address</div>
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Street</span>
+            <input type="text" id="street" placeholder="Enter your street" required>
+          </div>
+          <div class="input-box">
+            <span class="details">City</span>
+            <input type="text" id="city" placeholder="Enter your City" required>
+          </div>
+          <div class="input-box">
+            <span class="details">State</span>
+            <input type="text" id="state" placeholder="Enter your State" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Country</span>
+            <input type="text" id="country" placeholder="Enter your Country" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Postal Code</span>
+            <input type="text" id="postal_code" placeholder="Enter your postal code" required>
+          </div>
         </div>
-
-        <div>
-            <input type="text" id="state" placeholder="State" />
-        </div>
-
-        <div>
-            <input type="text" id="city" placeholder="City" />
-        </div>
-
-        <div>
-            <input type="text" id="country" placeholder="Country" />
-        </div>
-
-        <div>
-            <button class="btn1">Salvar mudanças</button>
-        </div>
-   </form>
-</div>
+        
+        <button class="btn-login" (click)="save()">Register</button>
+      </form>
+    </div>
+      </body>

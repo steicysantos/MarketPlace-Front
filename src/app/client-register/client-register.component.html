@@ -1,45 +1,39 @@
-<app-top-bar [titulo]="titlePage"></app-top-bar>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+<body>
 
-
-
-<div class="register-box">
-    <div class="titleRegister">
-        <h1>Client Register</h1>
-        <br><br>
-    </div>
-   <form>
-       <div class="inputsRegister">
-           <input type="text" id="nome" placeholder="Nome" />
-       </div>
-
-       <div class="inputsRegister">
-            <input type="text" id="phone" placeholder="Phone" />
+<div class="container-register">
+    <div class="title">Register Person</div>
+    <form action="#">
+      <div class="user-details">
+        <div class="input-box">
+          <span class="details">Name</span>
+          <input type="text" id="name" placeholder="Enter your name" required>
         </div>
-
-        <div class="inputsRegister">
-            <input type="email" id="email" placeholder="E-mail" />
+        <div class="input-box">
+          <span class="details">Date of Birth</span>
+          <input type="date" id="date" placeholder="Enter your Date of Birth" required>
         </div>
-
-        <div class="inputsRegister">
-            <input type="text" id="login" placeholder="Login" />
+        <div class="input-box">
+          <span class="details">Document</span>
+          <input type="text" id="document" placeholder="Enter your Document" required>
         </div>
-
-        <div class="inputsRegister">
-            <input type="date" id="date" placeholder="Date of Birth" />
+        <div class="input-box">
+          <span class="details">Email</span>
+          <input type="text" id="email" placeholder="Enter your Email" required>
         </div>
-
-        <div class="inputsRegister">
-            <input type="password" id="password" placeholder="Password" />
+        <div class="input-box">
+          <span class="details">Phone</span>
+          <input type="text" id="phone" mask="(00)00000-0000" placeholder="Enter your phone" required>
         </div>
-
-        <div class="inputsRegister">
-            <input type="text" id="document" placeholder="Document" />
+        <div class="input-box">
+          <span class="details">Login</span>
+          <input type="text" id="login" placeholder="Enter your login" required>
         </div>
-
-        <div class="btnss">
-            <div class="btnAddress1"><button class="btn">Cancel</button></div>
-            <div class="btnAddress2"><button class="btn">Save Changes</button></div>
-        </div>
-   </form>
+        <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" id="passwd" placeholder="Enter your Password" required>
+          </div>
+      </div>
+      <button class="btn-login"  (click)="save()">Continue</button>
+    </form>
 </div>
+</body>
