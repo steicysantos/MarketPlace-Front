@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Product} from '../../products';
+import {Product} from '../products';
 import { Route, Router } from '@angular/router';
 import axios from "axios";
 import { EmailValidator } from '@angular/forms';

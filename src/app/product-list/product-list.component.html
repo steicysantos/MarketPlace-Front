@@ -13,11 +13,11 @@
                 <div class="product">
                     <p>SMARTPHONE</p>
                     <h1>{{product.name}}</h1>
-                    <h2>{{product.price | currency: 'BRL'}}</h2>
+                    <!-- <h2>{{product.price | currency: 'BRL'}}</h2> -->
                     <p class="descricao">{{product.description}}</p>
                     <div class="buttons">
                         <button class="add">Add to cart</button>
-                        <button class="like"><span>♥</span></button>
+                        <button class="like" (click)="AddProductToWishList(product.idStocks)"><span>♥</span></button>
                     </div>
                 
                 </div>

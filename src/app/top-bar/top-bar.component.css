@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+}
+ul{
+    list-style: none;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+
+nav{
+    background-color: rgb(29, 80, 107);
+    padding: 0 30px;
+    justify-content: space-between;
+    align-items: center;
+}
+h1, p{
+    color:rgb(255, 255, 255);
+    font-family: 'Noto Sans', sans-serif;
+}   
+
+nav, ul{
+    display: flex;
+    flex-direction: row;
+}
+
+li{
+    padding: 0 20px;
+    font-weight: bold;
+}
+h1{
+    margin: 0;
+    padding: 10px;
+}
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 36px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+}
+li:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    background-color: rgb(255, 135, 0);
+    border-radius: 100px;
+}
+
+button:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+h1:hover{
+    cursor: pointer;
+}
+
+button:focus ~ ul{
+    height: 250px;
+}
+@media (max-width: 700px) {
+    nav,ul{
+        flex-direction: column;
+        padding: 0;        
+    }
+    ul{
+        text-align: center;
+        margin: 0;
+        height: 0;
+    }
+    nav{
+        padding-top: 0;
+        align-items: flex-start;
+    }
+    h1{
+        margin: 10px;
+        margin-bottom: 5px;
+    }
+    button{
+        display: flex;
+    }
+    li, ul{
+        width: 100%;
+    }
+    li:hover, button:hover{
+        border-radius: 0;
+    }
+}
+
+@media (min-width: 701px){
+    nav,ul{
+        flex-direction: row;
+        padding: 0 30px;        
+    }
+    ul{
+        text-align: center;
+        margin: 0;
+        height: 0;
+    }
+    nav{
+        padding-top: 0;
+        align-items: flex-start;
+    }
+    h1{
+        margin: 10px;
+        margin-bottom: 5px;
+    }
+    button{
+        display: flex;
+    }
+    li, ul{
+        width: 100%;
+    }
+    li:hover, button:hover{
+        border-radius: 0;
+    }
+}

@@ -10,6 +10,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { AddressRegisterComponent } from './address-register/address-register.component';
 import { ClientRegisterComponent } from './client-register/client-register.component';
 import { LoginComponent } from './login/login.component';
+import { WishlistComponent } from './wishlist/wishlist.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LoginComponent } from './login/login.component';
     ProductDetailComponent,
     AddressRegisterComponent,
     ClientRegisterComponent,
-    LoginComponent
+    LoginComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { LoginComponent } from './login/login.component';
       {path:'product/:productID',component:ProductDetailComponent},
       {path: 'address-register', component: AddressRegisterComponent},
       {path: 'client-register', component: ClientRegisterComponent},
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      {path: 'wishlist', component: WishlistComponent}
     ])
   ],
   providers: [],

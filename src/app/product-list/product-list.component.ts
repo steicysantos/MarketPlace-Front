@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { products } from '../../products';
+import { Product } from '../products';
 import axios from 'axios';
 
 @Component({
@@ -8,7 +8,7 @@ import axios from 'axios';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-products = products;
+  products: [Product] | undefined;
 titlePage = "Produtos";
   constructor() { }
 
@@ -22,12 +22,36 @@ titlePage = "Produtos";
       headers: { }
     };
     var instance  = this;
-    axios(config).then(function (response: { data: { id: number; name: string; price: number; description: string; image: string; }[]; }) {
+    axios(config).then(function (response:any ) {
       instance.products = response.data;
     })
     .catch(function (error: any) {
       console.log(error);
     });
   
+  }
+
+  AddProductToWishList(IdStocks: Number) {
+    var data = JSON.stringify({
+      id: IdStocks,
+    });
+
+    var config = {
+      method: 'post',
+      url: 'http://localhost:5062/wishList/register',
+      headers: {
+        Authorization:'Bearer '+ localStorage.getItem("authToken"),
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    };
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
 }

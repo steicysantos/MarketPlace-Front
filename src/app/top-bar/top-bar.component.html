@@ -1,7 +1,20 @@
-<a [routerLink]="['/']">
-    <h1>{{titulo}}</h1>
-</a>
 
-<a [routerLink]="['/address-register']">
-    <h1>Register address</h1>
-</a>
+<html>
+    <head>
+        <title>Menu</title>
+    </head>
+    <body>
+        <nav>
+            <div class="logo" [routerLink]="['']">
+                <h1>MARKETPLACE</h1>
+            </div>
+            <button>&#9776;</button>
+            <ul>
+                <li *ngIf="Token!=null || TokenOwner!=null"><p>Perfil</p></li>
+                <li *ngIf="Token!=null || TokenOwner!=null"><p>Purchase</p></li>
+                <li *ngIf="Token!=null || TokenOwner!=null"><p>WishList</p></li>
+                <li *ngIf="Token==null && TokenOwner==null" [routerLink]="['/login']"><p>Login</p></li>
+            </ul>
+        </nav>
+    </body>
+</html>
