@@ -63,7 +63,7 @@ export class ProfileComponent implements OnInit {
     };
 
     var response = await axios(config);
-
+    console.log(response.data)
     this.client = response.data;
 
     this.client.date_of_birth = this.client.date_of_birth.substring(0, 10).toString();
@@ -78,6 +78,7 @@ export class ProfileComponent implements OnInit {
     };
 
     var response = await axios(config);
+    console.log(response.data)
 
     this.owner = response.data;
 
