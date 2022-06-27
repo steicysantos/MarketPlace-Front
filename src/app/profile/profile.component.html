@@ -1,0 +1,25 @@
+<app-top-bar></app-top-bar>
+
+    <div class="container-profile">
+        <!-- <div class="photo"><img src={{client.photo}} alt=""></div> -->
+        <label *ngIf="authToken != null" class="name">nome:  {{client.name}}</label>
+        <label *ngIf="authToken != null" class="email">email:  {{client.email}}</label>
+        <label *ngIf="authToken != null" class="phone">telefone:  {{client.phone}}</label>
+        <label *ngIf="authToken != null" class="birth">data de nascimento:  {{client.date_of_birth}}</label>
+        <label *ngIf="authToken != null" class="document">documento:  {{client.document}}</label>
+        <label *ngIf="authTokenOwner != null" class="name">nome:  {{owner.name}}</label>
+        <label *ngIf="authTokenOwner != null" class="email">email:  {{owner.email}}</label>
+        <label *ngIf="authTokenOwner != null" class="phone">telefone:  {{owner.phone}}</label>
+        <label *ngIf="authTokenOwner != null" class="birth">data de nascimento:  {{owner.date_of_birth}}</label>
+        <label *ngIf="authTokenOwner != null" class="document">CPF:  {{owner.document}}</label>
+        <label *ngIf="authTokenOwner != null" class="document">loja:  {{owner.document}}</label>
+        <label *ngIf="authTokenOwner != null" class="document">CNPJ:  {{owner.document}}</label>
+    </div>
+    <div class="photo"></div>
+    <div class="button-bar">
+        <div  class="button-list"><button >Alterar Perfil</button></div>
+        <div  *ngIf="authToken != null" class="button-list"><button [routerLink]="['/client/purchasedetails']">Compras</button></div>
+        <div  *ngIf="authTokenOwner != null" class="button-list"><button [routerLink]="['/owner/sales']">Vendas</button></div>
+        <div  *ngIf="authToken != null"  class="button-list"><button [routerLink]="['/client/wishlist']">WishList</button></div>
+        <div class="button-list"><button (click)="logout()" [routerLink]="['/login']">Logout</button></div>
+    </div>

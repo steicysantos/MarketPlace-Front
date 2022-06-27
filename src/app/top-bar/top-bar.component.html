@@ -11,9 +11,12 @@
             <button>&#9776;</button>
             <ul>
                 <li *ngIf="Token!=null || TokenOwner!=null"><p>Perfil</p></li>
-                <li *ngIf="Token!=null || TokenOwner!=null"><p>Purchase</p></li>
-                <li *ngIf="Token!=null || TokenOwner!=null"><p>WishList</p></li>
+                <li *ngIf="Token!=null"><p>Purchase</p></li>
+                <li *ngIf="Token==null && TokenOwner!=null" [routerLink]="['/register/store']"><p>Register Store</p></li>
+                <li *ngIf="Token!=null" [routerLink]="['/wishlist']"><p>WishList</p></li>
+                <li *ngIf="Token!=null || TokenOwner!=null" (click)="logout()"><p>Logout</p></li>
                 <li *ngIf="Token==null && TokenOwner==null" [routerLink]="['/login']"><p>Login</p></li>
+                
             </ul>
         </nav>
     </body>

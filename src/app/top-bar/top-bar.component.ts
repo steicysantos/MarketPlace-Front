@@ -16,7 +16,7 @@ export class TopBarComponent implements OnInit {
 
   this.Id = Number(localStorage.getItem('id'));
 
-  this.TokenOwner = localStorage.getItem('authTokenOwner');
+  this.TokenOwner = localStorage.getItem('authOwner');
 
   this.ClientName = localStorage.getItem('clientName');
 
@@ -34,6 +34,13 @@ export class TopBarComponent implements OnInit {
 
   ngOnInit(): void {
 
+  }
+  logout(){
+    this.Token = null;
+    this.TokenOwner = null;
+
+    localStorage.removeItem('authToken');
+    localStorage.removeItem('authTokenOwner');
   }
 
 }

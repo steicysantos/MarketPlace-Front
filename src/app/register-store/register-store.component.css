@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans',  sans-serif;
+    
+}
+
+body{
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color:rgb(29,80,107);
+  background-repeat: no-repeat; 
+  background-size: cover;
+}
+
+.container-store{
+  width: 20%;
+  background: rgb(255, 255, 255);
+  padding: 25px 30px;
+  box-shadow: 0px 10px 40px -12px #3b3b3b;
+  border-radius: 5px;
+}
+
+
+.container-store .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.container-store form .user-details{
+  display: flex;
+  margin: 20px 0 12px 0;
+  flex-direction: column;
+}
+
+form .user-details .input-box{
+  margin-bottom: 15px;
+}
+
+.user-details .input-box .details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: rgb(255, 135, 0);
+}
+.centerbutton{
+    display: flex;
+    gap: 25px;
+    justify-content: center;
+}
+.btn{
+
+    padding: 10px 20px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    text-transform: uppercase;
+    justify-self: center;
+    align-items: center;
+    font-family: 'Noto sans', sans-serif;
+    font-weight: 550;
+    font-size: 15px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    background: rgb(255, 135, 0);
+    cursor: pointer;
+    box-shadow: 0px 10px 40px -12px #1c2333;;
+}
+
+
+/* falta ser responsivo  */

@@ -11,6 +11,8 @@ import { AddressRegisterComponent } from './address-register/address-register.co
 import { ClientRegisterComponent } from './client-register/client-register.component';
 import { LoginComponent } from './login/login.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
+import { RegisterStoreComponent } from './register-store/register-store.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
     AddressRegisterComponent,
     ClientRegisterComponent,
     LoginComponent,
-    WishlistComponent
+    WishlistComponent,
+    RegisterStoreComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
       {path: 'address-register', component: AddressRegisterComponent},
       {path: 'client-register', component: ClientRegisterComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'wishlist', component: WishlistComponent}
+      {path: 'wishlist', component: WishlistComponent},
+      {path: 'register/store', component: RegisterStoreComponent},
+      {path: 'profile', component: ProfileComponent}
     ])
   ],
   providers: [],
