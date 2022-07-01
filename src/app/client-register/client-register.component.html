@@ -33,6 +33,12 @@
             <span class="details">Password</span>
             <input type="text" id="passwd" placeholder="Enter your Password" required>
           </div>
+          <div class="input-box">
+            <span class="details" for="gender">Type of User</span>
+            <input type="radio" name="gender" value="1" required>Client
+            <input type="radio" name="gender" value="2" required>Owner
+          </div>
+          
       </div>
       <button class="btn-login"  (click)="save()">Continue</button>
     </form>

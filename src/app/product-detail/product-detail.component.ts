@@ -38,4 +38,68 @@ export class ProductDetailComponent implements OnInit {
     //this.product = products.find(product => product.id === porductIdFromroute);
   }
 
+  show(){
+    var divs = document.getElementById('types');
+    if(divs!=undefined){
+      divs!.style.visibility="block"
+    }
+    divs!.style.display="block"
+  }
+  
+  finalize(){
+    var min = Math.ceil(1000);
+    var max = Math.floor(5000);
+    let date_purchase = new Date();
+    var ele = document.getElementsByTagName('input');
+    var typeofpayment;
+
+
+    for(var i = 0; i < ele.length; i++) {
+                  
+      if(ele[i].type="radio") {
+        
+          if(ele[i].checked){
+            typeofpayment=ele[i].value
+            break;
+          }
+          else{
+            typeofpayment=1
+          }
+              
+      }
+    }
+    var data = JSON.stringify({
+      date_purchase: date_purchase,
+      payment_type: typeofpayment,
+      purchase_status: 1,
+      purchase_values: this.product?.unit_price,
+      number_confirmation: Math.floor(Math.random() * (max - min + 1)) + min,
+      number_nf: "1414144",
+      idProduct: this.product?.id,
+      idStore: this.product?.idStore
+    });
+
+    console.log(JSON.stringify(data));
+    var config = {
+      method: 'post',
+      url: 'http://localhost:5062/purchase/make',
+      headers: {
+        Authorization:'Bearer '+ localStorage.getItem("authToken"),
+        'Content-Type': 'application/json',
+      },
+      data: data,
+    }
+
+    axios(config)
+      .then(function (response) {
+        console.log(JSON.stringify(response.data));
+        alert("Compra realizada");
+      })
+      .catch(function (error) {
+        
+        console.log(error);
+      });
+
+  }
+
 }

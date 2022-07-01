@@ -1,4 +1,4 @@
-
+<!-- 
 <html>
     <head>
         <title>Menu</title>
@@ -20,4 +20,67 @@
             </ul>
         </nav>
     </body>
-</html>
+</html> -->
+
+
+
+<!-- <html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NavBar</title>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheed"/>
+</head>-->
+<span> 
+	<nav>
+		<div class="oi">
+		<ul>
+			<li>
+				<span class="material-icons-outlined">notifications</span>
+			</li>
+			<li>
+				<span class="material-icons-outlined">shopping_cart</span>
+			</li>
+			<li>
+				<span class="material-icons-outlined">account_circle</span>
+				<ul>
+					
+					<li *ngIf="Token!=null || TokenOwner!=null" class="sub-item">
+						<span class="material-icons-outlined">person</span>
+						<p>Perfil</p>
+					</li>
+                    <li *ngIf="Token==null && TokenOwner!=null" [routerLink]="['/register/store']" class="sub-item">
+						<span class="material-icons-outlined">build</span>
+						<p>Cadastrar produto</p>
+					</li>
+					<li class="sub-item">
+						<span class="material-icons-outlined">payments</span>
+						<p>Purchase</p>
+					</li>
+					<li *ngIf="Token!=null" [routerLink]="['/wishlist']" class="sub-item">
+						<span class="material-icons-outlined">shopping_bag</span>
+						<p>WishList</p>
+					</li>
+					<li *ngIf="Token==null && TokenOwner==null" [routerLink]="['/login']" class="sub-item">
+						<span class="material-icons-outlined">login</span>
+						<p>Login</p>
+					</li>
+                    <li *ngIf="Token!=null || TokenOwner!=null" (click)="logout()" class="sub-item">
+						<span class="material-icons-outlined">logout</span>
+						<p>Logout</p>
+					</li>
+				</ul>
+				<!-- <img src="./img/neymar.png" class="profile" alt="">
+				<ul>
+					<li class="sub-item">
+						<span class="material-icons-outlined">grid_view</span>
+						<p>Dashboard</p>
+					</li>
+				</ul> -->
+			</li>
+		</ul>
+	</div>
+	</nav>	
+</span>
+<!-- </html> -->

@@ -13,6 +13,7 @@ import { LoginComponent } from './login/login.component';
 import { WishlistComponent } from './wishlist/wishlist.component';
 import { RegisterStoreComponent } from './register-store/register-store.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ProductRegisterComponent } from './product-register/product-register.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoginComponent,
     WishlistComponent,
     RegisterStoreComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductRegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import { ProfileComponent } from './profile/profile.component';
       {path: 'login', component: LoginComponent},
       {path: 'wishlist', component: WishlistComponent},
       {path: 'register/store', component: RegisterStoreComponent},
-      {path: 'profile', component: ProfileComponent}
+      {path: 'profile', component: ProfileComponent},
+      {path: 'register/product', component: ProductRegisterComponent}
     ])
   ],
   providers: [],

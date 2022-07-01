@@ -58,7 +58,7 @@ form .user-details .input-box{
   margin-bottom: 5px;
 }
 
-.user-details .input-box input{
+.user-details .input-box input[type="text"], input[type="date"]{
   height: 45px;
   width: 100%;
   outline: none;
@@ -129,8 +129,8 @@ form .gender-details .category{
   
 }
 
-form input[type="radio"]{
-  display: none;
+input[type="radio"]{
+  width: 30px;
 }
 
 form .button{

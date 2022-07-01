@@ -47,25 +47,47 @@ export class AddressRegisterComponent implements OnInit {
 
     
     })
+    if(dados.typeofuser==1){
+      let self = this;
+      var config = {
+        method: 'post',
+        url: 'http://localhost:5062/client/register',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : data
 
-    let self = this;
-    var config = {
-      method: 'post',
-      url: 'http://localhost:5062/client/register',
-      headers: { 
-        'Content-Type': 'application/json'
-      },
-      data : data
-
+      }
+      axios(config)
+      .then(function (response) {
+        localStorage.removeItem("user")
+        self.router.navigate(['client/login'])
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
     }
-    axios(config)
-    .then(function (response) {
-      localStorage.removeItem("user")
-      self.router.navigate(['client/login'])
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    else if(dados.typeofuser==2){
+      let self = this;
+      var config = {
+        method: 'post',
+        url: 'http://localhost:5062/owner/register',
+        headers: { 
+          'Content-Type': 'application/json'
+        },
+        data : data
+
+      }
+      axios(config)
+      .then(function (response) {
+        localStorage.removeItem("user")
+        self.router.navigate(['client/login'])
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+    
   
   }
 }

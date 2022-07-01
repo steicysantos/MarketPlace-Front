@@ -23,8 +23,22 @@ export class ClientRegisterComponent implements OnInit {
     let login = document.getElementById("login") as HTMLInputElement;
     let passwd = document.getElementById("passwd") as HTMLInputElement;
     let date_of_birth = document.getElementById("date_of_birth") as HTMLInputElement;
-
-    
+    var ele = document.getElementsByTagName('input');
+    var typeofuser;
+    for(var i = 0; i < ele.length; i++) {
+                  
+      if(ele[i].type="radio") {
+        
+          if(ele[i].checked){
+            typeofuser=ele[i].value
+            alert(typeofuser)
+          }
+          else{
+            typeofuser=1
+          }
+              
+      }
+  }
   
     var data = JSON.stringify({
       "name" : name?.value,
@@ -33,7 +47,8 @@ export class ClientRegisterComponent implements OnInit {
       "email" : email?.value,
       "login" : login?.value,
       "passwd" : passwd?.value,
-      "date_of_birth" : date_of_birth?.value
+      "date_of_birth" : date_of_birth?.value,  
+      "typeofuser":typeofuser
     })
     localStorage.setItem("user",data);
     let self = this;

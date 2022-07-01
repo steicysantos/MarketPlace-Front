@@ -155,9 +155,8 @@ table {
     cursor: auto;
   } 
       
-   app-top-bar {
+   /* app-top-bar {
     width: 100%;
-    height: 68px;
     background-color: rgb(29, 80, 107);
     padding: 8px;
     display: flex;
@@ -170,7 +169,7 @@ table {
     margin: 18px;
   }
 
-  app-top-bar 
+  app-top-bar  */
   
   .cart-item, .shipping-item {
     width: 100%;
