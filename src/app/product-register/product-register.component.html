@@ -8,7 +8,7 @@
         <div class="input-box">
           <span class="details">Store Name</span>
           <input *ngIf="store.name != ''"  disabled type="text" id="loja" [value]="store.name" placeholder="Enter your name" required>
-          <input *ngIf="store.name == ''" disabled type="text" id="loja" [value]="store.name" placeholder="Enter your name" required>
+          <input *ngIf="store.name == ''" disabled type="text" id="loja" [value]="store.name" placeholder="Sem loja cadastrada" required>
         </div>
         <div class="input-box">
           <span class="details">CNPJ</span>

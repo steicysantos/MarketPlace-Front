@@ -14,6 +14,9 @@ import { WishlistComponent } from './wishlist/wishlist.component';
 import { RegisterStoreComponent } from './register-store/register-store.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ProductRegisterComponent } from './product-register/product-register.component';
+import { PurchasesComponent } from './purchases/purchases.component';
+import { PurchaseDetailsComponent } from './purchase-details/purchase-details.component';
+import { SalesComponent } from './sales/sales.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +30,10 @@ import { ProductRegisterComponent } from './product-register/product-register.co
     WishlistComponent,
     RegisterStoreComponent,
     ProfileComponent,
-    ProductRegisterComponent
+    ProductRegisterComponent,
+    PurchasesComponent,
+    PurchaseDetailsComponent,
+    SalesComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +47,10 @@ import { ProductRegisterComponent } from './product-register/product-register.co
       {path: 'wishlist', component: WishlistComponent},
       {path: 'register/store', component: RegisterStoreComponent},
       {path: 'profile', component: ProfileComponent},
-      {path: 'register/product', component: ProductRegisterComponent}
+      {path: 'register/product', component: ProductRegisterComponent},
+      {path: 'client/purchases', component: PurchasesComponent},
+      {path: 'purchasedetail', component: PurchaseDetailsComponent},
+      {path: 'owner/sales', component: SalesComponent}
     ])
   ],
   providers: [],

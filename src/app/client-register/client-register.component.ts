@@ -31,7 +31,6 @@ export class ClientRegisterComponent implements OnInit {
         
           if(ele[i].checked){
             typeofuser=ele[i].value
-            alert(typeofuser)
           }
           else{
             typeofuser=1
