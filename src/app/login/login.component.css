@@ -18,7 +18,7 @@ body * {
 .main-login{
   width: 100vw;
   height: 100vh;
-  background: rgb(29, 80, 107);
+  background: rgb(231,231,231);
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -35,21 +35,22 @@ body * {
 
 .left-login > h1 {
   font-size: 3vw;
-  color: whitesmoke;
+  margin-left: 5rem;
+  color: rgb(39, 39, 39);
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .left-login-image{
-  width: 50vh;
+  width: 75vh;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
 .right-login{
-  width: 50vw;
+  width: 50vw;  
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -58,15 +59,15 @@ body * {
 }
 
 .card-login{
-  width: 60%;
+  width: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 30px 35px;
-  background: rgb(255, 135, 0);
+  background: rgb(27,80,107);
   border-radius:20px;
-  box-shadow: 0px 10px 40px #00000056;
+  margin-right: -15%;
 }
 
 .card-login > h1{
@@ -89,8 +90,8 @@ body * {
   border: none;
   border-radius: 5px;
   padding: 15px;
-  background: rgb(254, 198, 134);
-  color: whitesmoke;
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   font-size: 12pt;
   box-shadow: 0px 10px 40px #7a7a7a56;
   outline: none;
@@ -118,10 +119,10 @@ body * {
 
   font-weight: 800;
   letter-spacing: 3px;
-  color: rgb(253, 135, 2);
-  background: white;
+  color: rgb(255, 255, 255);
+  background: rgb(253,135,2);
   cursor: pointer;
-  box-shadow: 0px 10px 40px -12px rgb(204, 109, 0);
+  box-shadow: 0px 10px 40px -12px rgb(10, 10, 10);
 }
 
 @media only screen and (max-width: 950px){
