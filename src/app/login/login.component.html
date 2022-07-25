@@ -18,7 +18,7 @@
         </div>
         <div class="right-login">
             <div class="card-login">
-                <h1>LOGIN</h1>
+                <h1 style="margin-bottom: 2rem;">LOGIN</h1>
                 <div class="textfield">
                     <label for="usuario">Usuário</label>
                     <input type="text" name="usuario" placeholder="exemplo@gmail.com" id="login">
@@ -28,8 +28,8 @@
                     <input type="password" name="senha" placeholder="" id="senha">
                 </div>
                 <button class="btn-login" id="botaoForm" (click)="login()">Login</button>
-              <a [routerLink]="['/client-register']" ><div class="p">Não tem cadastro? Cadastre-se</div>></a>
-              <div class="p">Esqueceu a senha?</div>
+              <a [routerLink]="['/client-register']" ><div class="p">Não tem cadastro? Cadastre-se</div></a>
+              <!-- <div class="p">Esqueceu a senha?</div> -->
             </div>
         </div>
     </div>

@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit {
   authTokenOwner : String | null;
   client: Client;
   owner:Owner;
+  editPersonal : boolean = false
+  editAddress : boolean = false
 
   constructor(private route: ActivatedRoute) { 
     this.client = {
@@ -52,6 +54,10 @@ export class ProfileComponent implements OnInit {
       const ownerId = Number(localStorage.getItem('id'));
       this.getOwner(ownerId);
     }
+
+    this.disableInputs('address')
+    this.disableInputs('personal')
+
   }
   async getClient(id:number){
     var config = {
@@ -94,5 +100,40 @@ export class ProfileComponent implements OnInit {
     localStorage.removeItem('ownerName');
     localStorage.removeItem('id');
   }
+
+disableInputs(name:string){
+    //Desabilita todos os inputs
+    var inputs = document.querySelectorAll("input")
+    for(var i = 0; i< inputs.length; i++){
+      if(inputs[i].name == name)
+           inputs[i].disabled =  true
+    }
+  }
+
+
+  allowEdit(name :string) {
+    var inputs = document.querySelectorAll("input")
+  
+    for(var i = 0; i< inputs.length; i++){
+      if(inputs[i].name == name)
+           inputs[i].disabled =  false
+    }
+    if(name == 'address')
+      this.editAddress = true
+    if(name == 'personal')
+      this.editPersonal = true
+    
+  }
+
+  saveEdits(name :string){
+    if(name == 'address'){
+    this.editAddress = false}
+    if(name == 'personal')
+      this.editPersonal = false
+    
+      this.disableInputs(name)
+    
+  }
+
 
 }

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap');
 
 body{
     margin: 0;
@@ -12,13 +13,14 @@ body * {
 .p{
   color: whitesmoke;
   font-size: 15px;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 8px;
 }
+
 .main-login{
   width: 100vw;
   height: 100vh;
-  background: rgb(29, 80, 107);
+  background: rgb(231,231,231);
   display: flex;
   justify-content: center;
   align-items: center;  
@@ -34,10 +36,12 @@ body * {
 }
 
 .left-login > h1 {
+  margin-left: 16rem;
   font-size: 3vw;
-  color: whitesmoke;
+  color: rgb(39, 39, 39);
   display: flex;
   justify-content: center;
+  font-family: 'Poppins', sans-serif;
   align-items: center;
 }
 
@@ -51,6 +55,7 @@ body * {
 .right-login{
   width: 50vw;
   height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +63,8 @@ body * {
 }
 
 .card-login{
-  width: 60%;
+  width: 45%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,8 +95,8 @@ body * {
   border: none;
   border-radius: 5px;
   padding: 15px;
-  background: rgb(254, 198, 134);
-  color: whitesmoke;
+  background: rgb(233, 233, 233);
+  color: rgb(0, 0, 0);
   font-size: 12pt;
   box-shadow: 0px 10px 40px #7a7a7a56;
   outline: none;
@@ -103,7 +109,7 @@ body * {
 }
 
 .textfield > input::placeholder{
-  color: rgb(254, 135, 0);
+  color: rgb(44, 44, 44);
   align-self: center;
 }
 
@@ -115,7 +121,6 @@ body * {
   border-radius: 8px;
   outline: none;
   text-transform: uppercase;
-
   font-weight: 800;
   letter-spacing: 3px;
   color: rgb(253, 135, 2);
