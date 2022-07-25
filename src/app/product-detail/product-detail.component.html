@@ -62,19 +62,20 @@
            <span class="quantity">Quantity:{{product.quantity}}</span>
          </div>
           <div class="buying">
-                 <div class="quantity">
+                 <!-- <div class="quantity">
                    <label for="quantity">Quantity:</label>
                    <input type="number">
-                 </div>
-                 <button ><i class="fa fa-heart-o"></i></button>
+                 </div> -->
+                 <button *ngIf="coracao==false" (click)="AddProductToWishList(product.idStocks)" ><i class="fa fa-heart-o"></i></button>
+                 <button *ngIf="coracao==true"(click)="RemoveWishList(product.idStocks)" ><i class="fa fa-heart"></i></button>
                  <button (click)="show()">Buy now</button>
           </div>
           <div id="types" style="display:none">
-            <div class="input-box">
-                <span class="details" for="gender">Payment Method</span>
-                <input type="radio" name="gender" value="1" required>Credit
-                <input type="radio" name="gender" value="2" required>Debit
-                <input type="radio" name="gender" value="3" required>Transfer
+            <div class="input-box"><br>
+                <span class="details" for="gender">Payment Method</span><br><br>
+                <input type="radio" name="gender" value="1" required>Credit<br>
+                <input type="radio" name="gender" value="2" required>Debit<br>
+                <input type="radio" name="gender" value="3" required>Transfer<br>
                 <button class="buttonFinalize" (click)="finalize()">Finalize Purchase</button>
               </div>
               

@@ -1,5 +1,5 @@
 <app-top-bar></app-top-bar>
-<div class="productsList" *ngIf="products">
+<!-- <div class="productsList" *ngIf="products">
     <div class="productComponent" *ngFor="let product of products" >
 
       <div class="item-d" >
@@ -16,8 +16,8 @@
       <div class = "item-c">
         <p>{{product.unit_price | currency:'BRL'}}</p>
         <a id="Like" (click)="RemoveWishList(product.idWishlist)"><img src="https://cdn-icons-png.flaticon.com/512/2107/2107845.png" alt=""></a>
-        <!-- https://cdn-icons-png.flaticon.com/512/2107/2107845.png  favorited -->
-        <!-- https://cdn-icons-png.flaticon.com/512/1000/1000621.png -->
+        https://cdn-icons-png.flaticon.com/512/2107/2107845.png  favorited 
+         https://cdn-icons-png.flaticon.com/512/1000/1000621.png 
 
       </div>
 
@@ -27,4 +27,37 @@
 
 
     </div>
-  </div>
+  </div> -->
+
+  <body>
+    <h1>Lista de desejos</h1>
+  <div class="productsList" *ngIf="products">
+  
+  
+    <div class="purchase-details-container" *ngFor="let product of products" >  
+      <div class="purchase-details-left">
+         <div class="purchase-details-image">
+            <img src={{product.image}} width="100px" height="100px"/>
+        </div>
+        
+        <div class="purchase-details-details">
+    
+        <div class="purchase-details-title">
+          Product: {{product.name}}
+          </div>
+        
+        <div class="purchase-details-content">
+          Description: {{product.description}}
+          </div>
+          <div class="purchase-details-content">
+            Price: {{product.unit_price | currency:'BRL'}}
+            </div>
+        
+          <div class="purchase-details-contentt">
+            <a id="Like" (click)="RemoveWishList(product.idWishlist)"><img style="width: 25px;height: 25px;" src="https://cdn-icons-png.flaticon.com/512/2107/2107845.png" alt=""></a>
+          </div>
+          
+       
+        </div>
+      </div>
+    </div>

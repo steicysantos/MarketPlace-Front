@@ -34,7 +34,9 @@
 </head>-->
 <span> 
 	<nav>
+		
 		<div class="oi">
+			<img [routerLink]="['/']" class="logo" src="../../assets/logo4.png">
 		<ul>
 			<li>
 				<span class="material-icons-outlined">notifications</span>
@@ -50,14 +52,19 @@
 						<span class="material-icons-outlined">person</span>
 						<p>Perfil</p>
 					</li>
-                    <li *ngIf="Token==null && TokenOwner!=null" [routerLink]="['/register/store']" class="sub-item">
+					<li *ngIf="Token==null && TokenOwner!=null" [routerLink]="['/register/product']" class="sub-item">
 						<span class="material-icons-outlined">build</span>
 						<p>Cadastrar produto</p>
 					</li>
-					<li class="sub-item">
+					<li class="sub-item" *ngIf="Token!=null && TokenOwner==null" [routerLink]="['/client/purchases']">
 						<span class="material-icons-outlined">payments</span>
-						<p>Purchase</p>
+						<p>Purchases</p>
 					</li>
+					<li *ngIf="Token==null && TokenOwner!=null" [routerLink]="['/owner/sales']" class="sub-item">
+						<span class="material-icons-outlined">storefront</span>
+						<p>Sales</p>
+					</li>
+					
 					<li *ngIf="Token!=null" [routerLink]="['/wishlist']" class="sub-item">
 						<span class="material-icons-outlined">shopping_bag</span>
 						<p>WishList</p>

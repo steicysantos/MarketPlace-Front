@@ -1,0 +1,67 @@
+<app-top-bar></app-top-bar>
+
+<!-- <h1>Lista de pedidos</h1>
+<div class="productsList" *ngIf="products">
+    <div class="productComponent" *ngFor="let product of products" >
+
+      <div class="item-d" >
+        <img src={{product.product.image}}>
+      </div>
+
+      <div class="item-a">
+            <a [title]="product.name"
+            [routerLink]="['/product',product.id]">
+                {{product.product.name}}
+            </a>
+      </div>
+
+      <div class = "item-c">
+        <p>{{product.store.name}}</p>
+
+      </div>
+      <div class = "item-c">
+        <p>{{product.stock.unit_price | currency:'BRL'}}</p>
+
+      </div> 
+
+      <div class = "item-b">
+        <p>{{product.date_purchase| date : 'dd/MM/yyyy'}}</p>
+        <button routerLink="/purchasedetail,product.id">Details</button>
+      </div>
+
+
+    </div>
+  </div> -->
+
+  <body>
+    <h1>Lista de Compras</h1>
+  <div class="productsList" *ngIf="products">
+  
+  
+    <div class="purchase-details-container" *ngFor="let product of products" >  
+      <div class="purchase-details-left">
+         <div class="purchase-details-image">
+            <img src={{product.product.image}} width="100px" height="100px"/>
+        </div>
+        
+        <div class="purchase-details-details">
+    
+        <div class="purchase-details-title">
+          Product: {{product.product.name}}
+          </div>
+        
+        <div class="purchase-details-content">
+          Store Name: {{product.store.name}}
+          </div>
+          <div class="purchase-details-content">
+            Date of Sale: {{product.date_purchase| date : 'dd/MM/yyyy'}}
+            </div>
+        
+          <div class="purchase-details-content">
+            <!-- {{product.stock.unit_price | currency:'BRL'}} -->
+          </div>
+          
+          <br>
+        </div>
+      </div>
+    </div>

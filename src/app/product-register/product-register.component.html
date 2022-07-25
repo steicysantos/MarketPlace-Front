@@ -1,17 +1,20 @@
 <app-top-bar></app-top-bar>
+
 <body>
 
-<div class="container-register">
+  <div class="container-register">
     <div class="title">Register Product</div>
     <span>
       <div class="user-details">
         <div class="input-box">
           <span class="details">Store Name</span>
-          <input *ngIf="store.name != ''"  disabled type="text" id="loja" [value]="store.name" placeholder="Enter your name" required>
-          <input *ngIf="store.name == ''" disabled type="text" id="loja" [value]="store.name" placeholder="Enter your name" required>
+          <input *ngIf="store.name != ''" disabled type="text" id="loja" [value]="store.name"
+            placeholder="Enter your name" required>
+          <input *ngIf="store.name == ''" disabled type="text" id="loja" [value]="store.name"
+            placeholder="Sem loja cadastrada" required>
         </div>
-        <div class="input-box">
-          <span class="details">CNPJ</span>
+        <div class="input-box" *ngIf="store.cnpj != ''" disabled>
+          <span class="details" >CNPJ</span>
           <input *ngIf="store.cnpj != ''" disabled id="cnpj" [value]="store.cnpj" type="text">
         </div>
         <div class="input-box">
@@ -31,17 +34,19 @@
           <input type="text" id="barcode" placeholder="Enter the bar code" required>
         </div>
         <div class="input-box">
-            <span class="details">Quantidade</span>
-            <input type="text" id="quantity" placeholder="Enter the quantity" required>
-          </div>
-          <div class="input-box">
-            <span class="details">Unit Price</span>
-            <input type="text" id="unitprice" placeholder="Enter the unit price" required>
-          </div>
+          <span class="details">Quantidade</span>
+          <input type="text" id="quantity" placeholder="Enter the quantity" required>
+        </div>
+        <div class="input-box">
+          <span class="details">Unit Price</span>
+          <input type="text" id="unitprice" placeholder="Enter the unit price" required>
+        </div>
       </div>
-      <button class="btn-product" *ngIf="store.name == ''" disabled  >Register Product</button>
-      <button class="btn-product" *ngIf="store.name != ''" (click)="register()">Register</button>
-      <button class="btn-product" *ngIf="store.name == ''" [routerLink]="['/register/store']">Register Store</button>
+      <div class="centerbutton">
+        <button class="btn-product" *ngIf="store.name == ''" disabled>Register Product</button>
+        <button class="btn-product" *ngIf="store.name != ''" (click)="register()">Register</button>
+        <button class="btn-product" *ngIf="store.name == ''" [routerLink]="['/register/store']">Register Store</button>
+      </div>
     </span>
-</div>
+  </div>
 </body>

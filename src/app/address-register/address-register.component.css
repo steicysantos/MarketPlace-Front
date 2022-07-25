@@ -29,8 +29,8 @@ body{
   font-weight: bolder;
   position: relative;
   margin-bottom: 2rem;
+  color: rgb(29,80,107);
 }
-
 .container-address form .user-details{
   display: flex;
   flex-wrap: wrap;
@@ -46,7 +46,8 @@ form .user-details .input-box{
 .user-details .input-box .details{
   display: block;
   font-weight: 500;
-  margin-bottom: 5px;
+  margin-bottom: 0.7rem;
+  margin-top: 0.7rem;
 }
 
 .user-details .input-box input{

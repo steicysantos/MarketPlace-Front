@@ -61,7 +61,7 @@ export class AddressRegisterComponent implements OnInit {
       axios(config)
       .then(function (response) {
         localStorage.removeItem("user")
-        self.router.navigate(['client/login'])
+        self.router.navigate(['login'])
       })
       .catch(function (error) {
         console.log(error);
@@ -81,7 +81,7 @@ export class AddressRegisterComponent implements OnInit {
       axios(config)
       .then(function (response) {
         localStorage.removeItem("user")
-        self.router.navigate(['client/login'])
+        self.router.navigate(['login'])
       })
       .catch(function (error) {
         console.log(error);

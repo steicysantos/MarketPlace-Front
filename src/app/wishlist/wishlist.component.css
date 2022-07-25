@@ -3,7 +3,7 @@ https://www.bypeople.com/css-jquery-product-card/ */
 
 
 
-.productsList {
+/* .productsList {
     display: flex;
     flex-wrap: wrap;
     gap: 8em;
@@ -93,15 +93,15 @@ https://www.bypeople.com/css-jquery-product-card/ */
     max-width: 100%;
     max-height: 100%;
     cursor: pointer;
-  }
+  } 
   
   .item-d img:active{
-    -webkit-transform:scale(10); /* or some other value */
+    -webkit-transform:scale(10); 
     transform:scale(10) rotate(3600000deg);
     transition: transform 5s;
   }
   
-  .productComponent {
+   .productComponent {
     grid-gap: 1em;
   
     display: grid;
@@ -122,3 +122,102 @@ https://www.bypeople.com/css-jquery-product-card/ */
         "ProductDescription"
         "ProductPrice";
   }
+
+  button{
+    margin-top: 25px;
+    width: 140px;
+    outline: none;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    background-color: #fe980f;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  
+  button:hover{
+     opacity: .8;
+  }
+
+  h1{
+    text-align:center;
+    margin-top: 5%;
+  } */
+
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Noto+Sans:wght@400;700&display=swap');
+
+body{
+    background-color: rgb(232, 234, 235);
+    width: auto;  
+  }
+  
+h2{
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 35px;
+    margin-top: 50px;
+    margin-bottom: -20px;
+    color: rgb(29, 80, 107);
+    letter-spacing: 0px;
+    text-transform: uppercase;
+}
+.purchase-details-container{
+    width: 70%;
+    max-width: 700px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: white;
+    margin: 0 auto;
+    overflow: hidden;
+    clear: both;
+    font-family: sans-serif;
+    margin-top:10px;
+    margin-bottom: 25px;
+}
+
+.purchase-details-image{
+    float: left;
+    box-sizing: border-box;
+    padding: 12px;
+    vertical-align: top;
+    max-width: 120px;
+    cursor: pointer;
+    margin-right: 25px;
+} 
+
+.purchase-details-title{
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+  
+.purchase-details-content{
+    font-size: 16px;
+    width: 100%;  
+    margin-bottom: 12px;
+}
+  
+@media (max-width:500px){
+    .purchase-details-container, .purchase-details-image, .purchase-details-title, .purchase-details-content{width:100%; margin-left:0;margin-right:0} 
+}
+
+
+img{
+  width: 100px;
+  height: 100px;
+}
+h1{
+  text-align:center;
+  margin-top: 5%;
+}
+.purchase-details-contentt{
+  height: 10%;
+}
+#Like img{
+  margin:0;
+}

@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router'
 import axios from 'axios';
 import { Client } from '../client';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-bar',
@@ -10,7 +11,7 @@ import { Client } from '../client';
 })
 export class TopBarComponent implements OnInit {
 @Input() titulo =  "";
-  constructor() {
+  constructor(private router: Router) {
     
     this.Token = localStorage.getItem('authToken');
 
@@ -30,17 +31,21 @@ export class TopBarComponent implements OnInit {
   ClientName : String | null;
   OwnerName : String | null;
 
-
+  
 
   ngOnInit(): void {
 
   }
+  
   logout(){
+    let self=this
     this.Token = null;
     this.TokenOwner = null;
 
     localStorage.removeItem('authToken');
-    localStorage.removeItem('authTokenOwner');
+    localStorage.removeItem('authOwner');
+
+    self.router.navigate(['/'])
   }
 
 }
