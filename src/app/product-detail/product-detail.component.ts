@@ -43,15 +43,8 @@ export class ProductDetailComponent implements OnInit {
     axios(config)
     .then(function (response:any) {
       var products = response.data as Array<Product>;
-      instance.product = products.find(p => p.id === productIdFromRoute)
-    })
-    .catch(function (error:any) {
-      console.log(error);
-    });
-    axios(config2)
-    .then(function (response:any) {
-      instance.idstock=response.data;
-      console.log(instance.idstock);
+      instance.idstock=productIdFromRoute;
+      instance.product = products.find(p => p.idStocks === productIdFromRoute)
     })
     .catch(function (error:any) {
       console.log(error);
@@ -101,6 +94,7 @@ export class ProductDetailComponent implements OnInit {
     let date_purchase = new Date();
     var ele = document.getElementsByTagName('input');
     var typeofpayment;
+    var quantidade=this.product?.quantity
 
 
     for(var i = 0; i < ele.length; i++) {
@@ -129,27 +123,51 @@ export class ProductDetailComponent implements OnInit {
     });
 
     console.log(JSON.stringify(data));
-    var config = {
-      method: 'post',
-      url: 'http://localhost:5062/purchase/make',
-      headers: {
-        Authorization:'Bearer '+ localStorage.getItem("authToken"),
-        'Content-Type': 'application/json',
-      },
-      data: data,
+    if(typeof quantidade==='number' && quantidade>0){
+      alert(quantidade)
+      var config = {
+        method: 'post',
+        url: 'http://localhost:5062/purchase/make',
+        headers: {
+          Authorization:'Bearer '+ localStorage.getItem("authToken"),
+          'Content-Type': 'application/json',
+        },
+        data: data,
+      }
+      var config2 = {
+        method: 'put',
+        url: 'http://localhost:5062/stock/updateQuantity/'+this.idstock,
+        headers: {
+          Authorization:'Bearer '+ localStorage.getItem("authToken"),
+          'Content-Type': 'application/json',
+        },
+        data: data,
+      }
+      var self = this;
+      axios(config)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          alert("Compra realizada");
+          self.router.navigate(['client/purchases'])
+        })
+        .catch(function (error) {
+          
+          console.log(error);
+        });
+        axios(config2)
+        .then(function (response) {
+          console.log(JSON.stringify(response.data));
+          alert("diminuido do stock");
+          self.router.navigate(['client/purchases'])
+        })
+        .catch(function (error) {
+          
+          console.log(error);
+        });
     }
-    var self = this;
-    axios(config)
-      .then(function (response) {
-        console.log(JSON.stringify(response.data));
-        alert("Compra realizada");
-        self.router.navigate(['client/purchases'])
-      })
-      .catch(function (error) {
-        
-        console.log(error);
-      });
-
+    else{
+      alert("Estoque insuficiente")
+    }
   }
 
   AddProductToWishList(IdStocks: Number) {

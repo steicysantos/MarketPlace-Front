@@ -1,4 +1,5 @@
 export type Client = {
+    id:number,
     name: string;
     phone: string;
     email: string;
@@ -6,4 +7,12 @@ export type Client = {
     login: string;
     date_of_birth: string;
     document: string;
+    address:{
+      id:number;
+      street:string;
+      city:string;
+      state:string;
+      country:string;
+      postal_code:string;
+    }
   };

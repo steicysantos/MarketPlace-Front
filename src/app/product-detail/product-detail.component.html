@@ -53,9 +53,9 @@
           <!-- <h2 class="original_price">$4.595,00</h2> -->
           <h2 class="sale_price">{{product.unit_price | currency: 'BRL'}}</h2>
           </div>
-          <div class="rating">
+          <!-- <div class="rating">
             <i class="fa fa-star fa-3x"></i><i class="fa fa-star fa-3x"></i><i class="fa fa-star fa-3x"></i><i class="fa fa-star-half-o fa-3x"></i><i class="fa fa-star-o fa-3x"></i>
-          </div>
+          </div> -->
           <div class="product_description">
           <p>{{product.description}}</p>
          <div class="related_info">
@@ -66,7 +66,7 @@
                    <label for="quantity">Quantity:</label>
                    <input type="number">
                  </div> -->
-                 <button *ngIf="coracao==false" (click)="AddProductToWishList(product.idStocks)" ><i class="fa fa-heart-o"></i></button>
+                 <button *ngIf="coracao==false" (click)="AddProductToWishList(idstock)" ><i class="fa fa-heart-o"></i></button>
                  <button *ngIf="coracao==true"(click)="RemoveWishList(product.idStocks)" ><i class="fa fa-heart"></i></button>
                  <button (click)="show()">Buy now</button>
           </div>

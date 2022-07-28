@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import axios from 'axios';
+import { LoginComponent } from '../login/login.component';
 import {Store} from '../store';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-register',
@@ -11,7 +13,7 @@ export class ProductRegisterComponent implements OnInit {
 
   store: Store;
 
-  constructor() { 
+  constructor(private router: Router) { 
     this.store = {
       name: "",
       cnpj: "",
@@ -21,7 +23,9 @@ export class ProductRegisterComponent implements OnInit {
   ngOnInit(): void {
     const token = localStorage.getItem('authOwner');
     this.getOwnerStores()
-
+    if(token==null){
+      this.router.navigate(['']);
+    }
   }
   async getOwnerStores(){
     var config = {
@@ -70,8 +74,7 @@ export class ProductRegisterComponent implements OnInit {
     
     axios(config)
     .then(function (response) {
-      console.log(JSON.stringify(response.data));
-      alert("Registrado com sucesso em Stock!");
+      console.log(JSON.stringify(response.data));      
     })
     .catch(function (error) {
       alert("erro");
@@ -101,11 +104,12 @@ export class ProductRegisterComponent implements OnInit {
       },
       data : data
     };
-    
+    var self = this;
     axios(config)
     .then(function (response) {
       console.log(JSON.stringify(response.data));
       alert("Registrado com sucesso em Product!");
+      self.router.navigate(['']);
     })
     .catch(function (error) {
       console.log(error);

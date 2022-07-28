@@ -38,17 +38,17 @@
 		<div class="oi">
 			<img [routerLink]="['/']" class="logo" src="../../assets/logo4.png">
 		<ul>
-			<li>
+			<!-- <li>
 				<span class="material-icons-outlined">notifications</span>
 			</li>
 			<li>
 				<span class="material-icons-outlined">shopping_cart</span>
-			</li>
+			</li> -->
 			<li>
 				<span class="material-icons-outlined">account_circle</span>
 				<ul>
 					
-					<li *ngIf="Token!=null || TokenOwner!=null" class="sub-item">
+					<li *ngIf="Token!=null || TokenOwner!=null" class="sub-item" [routerLink]="['/profile']">
 						<span class="material-icons-outlined">person</span>
 						<p>Perfil</p>
 					</li>

@@ -33,15 +33,20 @@
 
                     <div class="data">
                         <h4>Name</h4>
-                        <input type="text" name="personal" id="1" value="{{client.name}}">
+                        <input *ngIf="authTokenOwner != null" type="text" name="personal" id="nome" value="{{owner.name}}">
+                        <input *ngIf="authToken != null" type="text" name="personal" id="nome" value="{{client.name}}">
                         <h4>Date of Birth</h4>
-                        <input type="text" name="personal" id="2" value="{{client.date_of_birth}}">
+                        <input *ngIf="authTokenOwner != null" type="date" name="personal" id="date_of_birth" value="{{owner.date_of_birth}}">
+                        <input *ngIf="authToken != null" type="date" name="personal" id="date_of_birth" value="{{client.date_of_birth}}">
                         <h4>Document</h4>
-                        <input type="text" name="personal" id="3" value="{{client.document}}">
+                        <input *ngIf="authTokenOwner != null"  type="text" name="personal" id="document" value="{{owner.document}}">
+                        <input  *ngIf="authToken != null" type="text" name="personal" id="document" value="{{client.document}}">
                         <h4>Email:</h4>
-                        <input type="text" name="personal" id="4" value="{{client.email}}">
+                        <input *ngIf="authTokenOwner != null"  type="text" name="personal" id="email" value="{{owner.email}}">
+                        <input *ngIf="authToken != null" type="text" name="personal" id="email" value="{{client.email}}">
                         <h4>Phone</h4>
-                        <input type="text" name="personal" id="5" value="{{client.phone}}">
+                        <input *ngIf="authTokenOwner != null" type="text" name="personal" id="phone" value="{{owner.phone}}">
+                        <input *ngIf="authToken != null" type="text" name="personal" id="phone" value="{{client.phone}}">
                     </div>
                     <div class="btt">
                         <button (click)="allowEdit('personal')">EDITAR</button>
@@ -60,15 +65,20 @@
                 <div class="address_data">
                     <div class="data">
                         <h4>Street</h4>
-                        <input type="text" name="address" id="8" value="Joaquim Gonzaga Pereira 158">
+                        <input *ngIf="authTokenOwner != null" type="text" name="address" id="street" value="{{owner.address.street}}">
+                        <input *ngIf="authToken != null" type="text" name="address" id="street" value="{{client.address.street}}">
                         <h4>State</h4>
-                        <input type="text" name="address" id="9" value="Paraná">
+                        <input *ngIf="authTokenOwner != null" type="text" name="address" id="state" value="{{owner.address.state}}">
+                        <input *ngIf="authToken != null" type="text" name="address" id="state" value="{{client.address.state}}">
                         <h4>City</h4>
-                        <input type="text" name="address" id="10" value="Curitiba">
-                        <h4>Coutry</h4>
-                        <input type="text" name="address" id="11" value="Brasil">
+                        <input *ngIf="authTokenOwner != null" type="text" name="address" id="city" value="{{owner.address.city}}">
+                        <input *ngIf="authToken != null"  type="text" name="address" id="city" value="{{client.address.city}}">
+                        <h4>Country</h4>
+                        <input *ngIf="authTokenOwner != null" type="text" name="address" id="country" value="{{owner.address.country}}">
+                        <input *ngIf="authToken != null" type="text" name="address" id="country" value="{{client.address.country}}">
                         <h4>Postal Code</h4>
-                        <input type="text" name="address" id="12" value="81900435">
+                        <input *ngIf="authTokenOwner != null" type="text" name="address" id="postal_code" value="{{owner.address.postal_code}}">
+                        <input *ngIf="authToken != null" type="text" name="address" id="postal_code" value="{{client.address.postal_code}}">
                     </div>
                     <div class="btt">
                         <button (click)="allowEdit('address')">EDITAR</button>

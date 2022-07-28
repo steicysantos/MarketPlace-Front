@@ -15,7 +15,6 @@ import { RegisterStoreComponent } from './register-store/register-store.componen
 import { ProfileComponent } from './profile/profile.component';
 import { ProductRegisterComponent } from './product-register/product-register.component';
 import { PurchasesComponent } from './purchases/purchases.component';
-import { PurchaseDetailsComponent } from './purchase-details/purchase-details.component';
 import { SalesComponent } from './sales/sales.component';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { SalesComponent } from './sales/sales.component';
     ProfileComponent,
     ProductRegisterComponent,
     PurchasesComponent,
-    PurchaseDetailsComponent,
     SalesComponent
   ],
   imports: [
@@ -49,7 +47,6 @@ import { SalesComponent } from './sales/sales.component';
       {path: 'profile', component: ProfileComponent},
       {path: 'register/product', component: ProductRegisterComponent},
       {path: 'client/purchases', component: PurchasesComponent},
-      {path: 'purchasedetail', component: PurchaseDetailsComponent},
       {path: 'owner/sales', component: SalesComponent}
     ])
   ],

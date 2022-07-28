@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../products';
 import { ActivatedRoute } from '@angular/router';
 import axios from 'axios';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-sales',
@@ -12,11 +13,15 @@ export class SalesComponent implements OnInit {
 
   products : [Product] |undefined;
   userID: number;
-  constructor() {
+  constructor(private router: Router) {
     this.userID=1;
    }
 
   ngOnInit(): void {
+    const token = localStorage.getItem('authOwner');
+    if(token==null){
+      this.router.navigate(['']);
+    }
     this.LoadSales();
   }
 

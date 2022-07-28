@@ -19,6 +19,11 @@ export class RegisterStoreComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const token = localStorage.getItem('authOwner');
+    this.getOwnerStores()
+    if(token==null){
+      this.router.navigate(['']);
+    }
   }
 
   async getOwnerStores(){
