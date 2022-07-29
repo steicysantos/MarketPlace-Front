@@ -22,7 +22,8 @@ export class ClientRegisterComponent implements OnInit {
     let email = document.getElementById("email") as HTMLInputElement;
     let login = document.getElementById("login") as HTMLInputElement;
     let passwd = document.getElementById("passwd") as HTMLInputElement;
-    let date_of_birth = document.getElementById("date_of_birth") as HTMLInputElement;
+    let date_of_birth = document.getElementById("date") as HTMLInputElement;
+    alert(date_of_birth?.value)
     var ele = document.getElementsByTagName('input');
     var typeofuser;
     for(var i = 0; i < ele.length; i++) {

@@ -59,7 +59,7 @@ export class RegisterStoreComponent implements OnInit {
 
       }
       console.log(self.store.name)
-      if(self.store.name!=""){
+      if(self.store.name==""){
         axios(config)
         .then(function (response) {
           alert("Loja cadastrada")

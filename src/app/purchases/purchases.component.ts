@@ -33,7 +33,6 @@ export class PurchasesComponent implements OnInit {
     axios(config)
     .then(function (response) {
       instance.products = response.data
-      console.log(response.data)
     })
     .catch(function (error) {
       console.log(error);

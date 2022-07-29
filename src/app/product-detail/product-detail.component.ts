@@ -70,7 +70,6 @@ export class ProductDetailComponent implements OnInit {
       this.arrAdds.push(wishlist.id);
     }
   }
-  console.log(this.arrAdds);
   if(this.arrAdds.includes(this.idstock)){
     this.coracao=true
     console.log(this.coracao)
@@ -124,7 +123,6 @@ export class ProductDetailComponent implements OnInit {
 
     console.log(JSON.stringify(data));
     if(typeof quantidade==='number' && quantidade>0){
-      alert(quantidade)
       var config = {
         method: 'post',
         url: 'http://localhost:5062/purchase/make',
@@ -157,7 +155,6 @@ export class ProductDetailComponent implements OnInit {
         axios(config2)
         .then(function (response) {
           console.log(JSON.stringify(response.data));
-          alert("diminuido do stock");
           self.router.navigate(['client/purchases'])
         })
         .catch(function (error) {
@@ -187,7 +184,6 @@ export class ProductDetailComponent implements OnInit {
 
     axios(config)
       .then(function (response) {
-        console.log(JSON.stringify(response.data));
         window.location.reload();
       })
       .catch(function (error) {
@@ -205,7 +201,6 @@ export class ProductDetailComponent implements OnInit {
     let instance = this;
     axios(config)
     .then(function (response: any) {
-      console.log(JSON.stringify(response.data));
       window.location.reload();
     })
     .catch(function (error : any) {

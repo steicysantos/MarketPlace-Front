@@ -188,7 +188,6 @@ disableInputs(name:string){
       }
       axios(config)
       .then(function (response) {
-        alert(response.data)
         // self.router.navigate(['login'])
       })
       .catch(function (error) {
