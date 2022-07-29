@@ -50,7 +50,7 @@ form .user-details .input-box{
   margin-top: 0.7rem;
 }
 
-.user-details .input-box input[type="text"], input[type="date"]{
+.user-details .input-box input[type="text"], input[type="date"],input[type="password"]{
   height: 45px;
   width: 100%;
   outline: none;
